@@ -13,9 +13,7 @@ import javax.ws.rs.ext.MessageBodyWriter;
 import javax.ws.rs.ext.Provider;
 
 /**
- * @author Arun Gupta
- * 
- *  MyWriter, defines the conversion from MyObject Java type to on-the-wire representation.
+ * Defines the conversion from MyObject Java type to on-the-wire representation.
  */
 @Provider
 @Produces(MyObject.MIME_TYPE)
@@ -38,12 +36,14 @@ public class MyWriter implements MessageBodyWriter<MyObject> {
 
     @Override
     public void writeTo(MyObject t, 
-                Class<?> type, 
-                Type type1, 
-                Annotation[] antns, 
-                MediaType mt, 
+                Class<?>                       type, 
+                Type                           type1, 
+                Annotation[]                   antns, 
+                MediaType                      mt, 
                 MultivaluedMap<String, Object> mm, 
-                OutputStream out) throws IOException, WebApplicationException {
+                OutputStream                   out) 
+				throws IOException, WebApplicationException {
+
         ObjectOutputStream oos = new ObjectOutputStream(out);
         oos.writeObject(t);
     }

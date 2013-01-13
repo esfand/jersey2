@@ -17,7 +17,7 @@ import javax.ws.rs.ext.Provider;
 /**
  * @author Arun Gupta
  * 
- * MyReader, defines the conversion of on-the-wire representation to MyObject Java type.
+ * MyReader defines the conversion of on-the-wire representation to MyObject Java type.
  */
 @Provider
 @Consumes(MyObject.MIME_TYPE)
